@@ -9,21 +9,19 @@ election_data = pd.read_csv(PollFile)
 
 df_ed = pd.DataFrame(election_data)
 
-#create an empty set to store vote counts as percent
 percent_count = []
 
-# isolate unique candidates
+# unique candidates
 candidates = list(df_ed["Candidate"].unique())
 
-# count how many times the candidate appears
+# how many times the candidate appears
 counts = list(df_ed["Candidate"].value_counts())
 
 # total vote count
 total_votes = sum(counts)
 
-# set variable for loop
 x = 0
-
+# set variable for loop
 # for loop to calculate percentages
 for candidate in candidates:
     percentage = round(counts[x]/total_votes,3)
@@ -31,7 +29,7 @@ for candidate in candidates:
     percent_count.append(percentage)
     x+=1
 
-# zipped list of data to rebuild data frame
+# zipp data 
 data = list(zip(candidates, percent_count, counts))
 
 # calculate max counts to find winner
