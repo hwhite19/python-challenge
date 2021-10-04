@@ -2,7 +2,7 @@ import os
 import csv
 
 # navigate to file
-PyBank = os.path.join("data", "budget_data.csv")
+PyBank = os.path.join("Resources", "budget_data.csv")
 
 months = []
 net_total = []
